@@ -29,7 +29,7 @@
         <table class="table table-striped table-bordered">
             <thead class="table-light">
                 <tr>
-                    <th scope="col">Id</th>
+                    <th scope="col">##</th>
                     <th scope="col">Product id</th>
 
                     <th scope="col">
@@ -53,7 +53,9 @@
 
                     <th scope="col">Stock</th>
                     <th scope="col">Image</th>
-                    <th scope="col">Actions</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Show</th>
+                    <th scope="col">Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -67,11 +69,13 @@
                         <td>{{$product->price}}</td>
                         <td>{{$product->stock}}</td>
                         <td><img src="{{ asset('storage/'.$product->image) }}" style="height: 50px; width: 50px;" alt="Product A" class="img-fluid"></td>
+                        <td><a href="{{ route('products.edit', ['id' => $product->id]) }}" class="btn btn-warning btn-sm">Edit</a></td>
+                        <td><a href="{{ route('products.show', ['id' => $product->id]) }}" class="btn btn-success btn-sm">Show</a></td>
                         <td>
                             <!-- Edit and Delete buttons -->
-                            <a href="{{ route('products.edit', ['id' => $product->id]) }}" class="btn btn-warning btn-sm">Edit</a>
+                            
 
-                            <a href="{{ route('products.show', ['id' => $product->id]) }}" class="btn btn-success btn-sm">Show</a>
+                            
                             
 				            <form action="{{ route('products.delete', ['id' => $product->id]) }}" method="POST" style="display:inline;">
 				                @csrf

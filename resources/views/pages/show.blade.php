@@ -20,7 +20,8 @@
 
         <!-- Add to Cart Button -->
         <div class="d-grid gap-2">
-          <button class="btn btn-primary btn-lg" type="button">Add to Cart</button>
+          <a href="{{ route('products.edit', ['id' => $product->id]) }}" class="btn btn-warning btn-sm">Edit</a>
+          
         </div>
       </div>
     </div>
